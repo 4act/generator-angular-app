@@ -1,7 +1,7 @@
 {
-    "name": "generator-cc-angular",
-    "version": "1.0.3",
-    "description": "BDD of Enterprise AngularJS projects with pleasure.",
+    "name": "generator-angular-app",
+    "version": "0.0.1",
+    "description": "Create enterprise AngularJS projects with a focus on BDD, testing, the latest standards, tooling, and libraries.",
     "keywords": [
         "yeoman-generator",
         "angularjs",
@@ -11,17 +11,17 @@
         "cucumber",
         "clean code"
     ],
-    "homepage": "https://github.com/leanovate/generator-cc-angular",
-    "bugs": "https://github.com/leanovate/generator-cc-angular/issues",
+    "homepage": "https://github.com/4act/generator-angular-app",
+    "bugs": "https://github.com/4act/generator-angular-app/issues",
     "author": {
-        "name": "André Bauer",
-        "email": "andre.bauer@leanovate.de",
-        "url": "https://github.com/anbauer"
+        "name": "Colton McCormack",
+        "email": "colt.mccormack@4act.com",
+        "url": "https://github.com/thatguyyoulove"
     },
     "main": "app/index.js",
     "repository": {
         "type": "git",
-        "url": "git://github.com/leanovate/generator-cc-angular.git"
+        "url": "git://github.com/4act/generator-angular-app.git"
     },
     "scripts": {
         "test": "mocha"
