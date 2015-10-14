@@ -1,8 +1,9 @@
 #generator-cc-angular
 
->BDD of Enterprise AngularJS projects with pleasure.
+>Create enterprise AngularJS projects with a focus on BDD, testing, the latest standards, tooling, and libraries.
 
-This generator is a fork of [cg-angular](https://github.com/cgross/generator-cg-angular), which is an amazing project!
+This generator is a fork of [cc-angular](https://github.com/leanovate/generator-cc-angular), which is another awesome angular generator!
+
 It did not perfectly fit to my needs so I improved it for my purposes:
 
 * **clearer separation of config and sources** by putting all the application-code in the `src` folder
