@@ -4,7 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var ccUtils = require('../utils.js');
 
-var CcangularGenerator = module.exports = function CcangularGenerator(args, options, config) {
+var AngularAppGenerator = module.exports = function AngularAppGenerator(args, options, config) {
     yeoman.generators.Base.apply(this, arguments);
 
     this.on('end', function() {
@@ -12,6 +12,7 @@ var CcangularGenerator = module.exports = function CcangularGenerator(args, opti
         this.config.set('modalDirectory', 'partial/');
         this.config.set('directiveDirectory', 'directive/');
         this.config.set('filterDirectory', 'filter/');
+        this.config.set('factoryDirectory', 'factory/');
         this.config.set('serviceDirectory', 'service/');
         var inject = {
             js: {
@@ -38,9 +39,9 @@ var CcangularGenerator = module.exports = function CcangularGenerator(args, opti
     this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 };
 
-util.inherits(CcangularGenerator, yeoman.generators.Base);
+util.inherits(AngularAppGenerator, yeoman.generators.Base);
 
-CcangularGenerator.prototype.askFor = function askFor() {
+AngularAppGenerator.prototype.askFor = function askFor() {
     var cb = this.async();
 
     var prompts = [
@@ -57,7 +58,7 @@ CcangularGenerator.prototype.askFor = function askFor() {
     }.bind(this));
 };
 
-/*CcangularGenerator.prototype.askForUiRouter = function askFor() {
+/*AngularAppGenerator.prototype.askForUiRouter = function askFor() {
     var cb = this.async();
 
     var prompts = [
@@ -87,6 +88,6 @@ CcangularGenerator.prototype.askFor = function askFor() {
     }.bind(this));
 };*/
 
-CcangularGenerator.prototype.app = function app() {
+AngularAppGenerator.prototype.app = function app() {
     this.directory('skeleton/', './');
 };
