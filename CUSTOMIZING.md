@@ -57,8 +57,7 @@ Here is an example configuration that matches the default behavior of the subgen
         "marker": "/* Add Component SASS Above */",
         "template": "@import \"<%= filename %>\";"
       }
-    },
-    "withAngularBootstrap": false
+    }
   }
 }
 ```

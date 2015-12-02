@@ -27,9 +27,6 @@ var AngularAppGenerator = module.exports = function AngularAppGenerator(args, op
             }
         };
         this.config.set('inject', inject);
-        //angular bootstrap not 1.3 ready
-        //<% if(withAngularBootstrap) { print ('"angular-bootstrap": "*",'); } %>
-        this.config.set('withAngularBootstrap', false);
 
         this.config.save();
         this.installDependencies({skipInstall: options['skip-install']});
