@@ -40,29 +40,26 @@ Here is an example configuration that matches the default behavior of the subgen
 
 ```js
 {
-	"uirouter": false,
-	"partialDirectory": "partial/",
-	"directiveDirectory": "directive/",
-	"serviceDirectory": "service/",
-	"filterDirectory": "filter/",
-	"partialTemplates": "templates/partial",
-	"directiveSimpleTemplates": "templates/simpleDirective",
-	"directiveComplexTemplates": "templates/complexDirective",
-	"serviceTemplates": "templates/service",
-	"filterTemplates": "templates/filter",
-	"moduleTemplates": "templates/module",
+    "partialDirectory": "partial/",
+    "directiveDirectory": "directive/",
+    "filterDirectory": "filter/",
+    "factoryDirectory": "factory/",
+    "serviceDirectory": "service/",
     "inject": {
       "js": {
         "file": "index.html",
         "marker": "<!-- Add New Component JS Above -->",
         "template": "<script src=\"<%= filename %>\"></script>"
       },
-      "less": {
-        "file": "app.less",
-        "marker": "/* Add Component LESS Above */",
+      "scss": {
+        "relativeToModule": true,
+        "file": "<%= module %>.scss",
+        "marker": "/* Add Component SASS Above */",
         "template": "@import \"<%= filename %>\";"
       }
-    }
+    },
+    "withAngularBootstrap": false
+  }
 }
 ```
 

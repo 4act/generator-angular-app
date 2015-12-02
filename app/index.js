@@ -9,7 +9,6 @@ var AngularAppGenerator = module.exports = function AngularAppGenerator(args, op
 
     this.on('end', function() {
         this.config.set('partialDirectory', 'partial/');
-        this.config.set('modalDirectory', 'partial/');
         this.config.set('directiveDirectory', 'directive/');
         this.config.set('filterDirectory', 'filter/');
         this.config.set('factoryDirectory', 'factory/');
@@ -20,10 +19,10 @@ var AngularAppGenerator = module.exports = function AngularAppGenerator(args, op
                 marker: ccUtils.JS_MARKER,
                 template: '<script src="<%= filename %>"></script>'
             },
-            less: {
+            scss: {
                 relativeToModule: true,
-                file: '<%= module %>.less',
-                marker: ccUtils.LESS_MARKER,
+                file: '<%= module %>.scss',
+                marker: ccUtils.SASS_MARKER,
                 template: '@import "<%= filename %>";'
             }
         };

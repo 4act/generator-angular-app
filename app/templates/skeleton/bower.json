@@ -21,7 +21,6 @@
         "angular-ui-utils": "~0.2",
         "moment": "*",
         "toastr": "~2.1",
-        "less.js": "~1.6",
         "font-awesome": "~4.3"
     }
 }

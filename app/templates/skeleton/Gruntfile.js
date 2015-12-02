@@ -97,9 +97,9 @@ module.exports = function(grunt) {
                 ],
                 tasks: [] //all the tasks are run dynamically during the watch event handler
             },
-            less: {
-                files: [createFolderGlobs(['*.less'], true)],
-                tasks: ['less:development'],
+            sass: {
+                files: [createFolderGlobs(['*.scss'], true)],
+                tasks: ['sass:development'],
                 options: {
                     spawn: true
                 }
@@ -125,19 +125,23 @@ module.exports = function(grunt) {
                 src: ['temp']
             }
         },
-        less: {
+        sass: {
             production: {
-                options: {},
+                options: {
+                    sourceMap: true
+                },
                 files: {
-                    'temp/app.css': 'src/app.module.less'
+                    'temp/app.css': 'src/app.module.scss'
                 }
             },
 
             development: {
-                options: {},
+                options: {
+                    sourceMap: true
+                },
                 files: {
-                    "temp/app.css": "src/app.module.less" // destination file and source file
-            }
+                    'temp/app.css': 'src/app.module.scss' // destination file and source file
+                }
             }
         },
         ngtemplates: {
@@ -317,10 +321,10 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('build', [
-        'jshint', 'clean:before', 'less', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify',
+        'jshint', 'clean:before', 'sass', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify',
         'copy', 'htmlmin', 'clean:after'
     ]);
-    grunt.registerTask('serve', ['dom_munger:read', 'jshint', 'karma:during_watch', 'connect', 'less:development', 'watch']);
+    grunt.registerTask('serve', ['dom_munger:read', 'jshint', 'karma:during_watch', 'connect', 'sass:development', 'watch']);
     grunt.registerTask('test', ['dom_munger:read', 'karma:all_tests', 'e2e-test']);
 
     grunt.registerTask('e2e-test', ['connect:test', 'protractor:e2e']);

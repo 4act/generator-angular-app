@@ -39,7 +39,7 @@ Features
    * `grunt serve` task allows you to run a simple development server with watch/livereload enabled.  Additionally, JSHint and the appropriate unit tests are run for the changed files.
 * Integrates Bower for package management
 * Includes Yeoman subgenerators for directives, services, partials, filters, and modules.
-* Integrates LESS and includes Bootstrap via the source LESS files allowing you to reuse Bootstrap vars/mixins/etc.
+* Integrates SASS and includes Bootstrap v4 via the source SASS files allowing you to reuse Bootstrap vars/mixins/etc.
 * Easily Testable - Each sub-generator creates a skeleton unit test.  Unit tests can be run via `grunt test` and they run automatically during the grunt watch that is active during `grunt serve`.
     * partials with routes generate an e2e skeleton test
     * e2e tests are written in Gherkin, cucumber.js is included.
@@ -47,7 +47,7 @@ Features
 Directory Layout
 -------------
 All subgenerators prompt the user to specify where to save the new files.  Thus you can create any directory structure you desire, including nesting.
-The generator will create a handful of files in the root of your project including `index.html`, `app.js`, and `app.less`.
+The generator will create a handful of files in the root of your project including `index.html`, `app.js`, and `app.scss`.
 You determine how the rest of the project will be structured but the generator makes educated suggestions.
 
 
@@ -94,24 +94,25 @@ Yeoman Subgenerators
 
 There are a set of subgenerators to initialize empty Angular components.  Each of these generators will:
 
-* Create one or more skeleton files (javascript, LESS, html, spec etc) for the component type.
+* Create one or more skeleton files (javascript, SASS, html, spec etc) for the component type.
 * Update index.html and add the necessary `script` tags.
-* Update app.less and add the @import as needed.
+* Update app.scss and add the @import as needed.
 * For partials, update the app.js, adding the necessary route call if a route was entered in the generator prompts.
 
-There are generators for `directive`,`partial`,`service`, `filter`, and `module`.
+There are generators for `directive`, `partial`, `factory`, `service`, `filter`, and `module`.
 
 Running a generator:
 
     yo cc-angular:directive my-awesome-directive
     yo cc-angular:partial my-partial
+    yo cc-angular:factory my-factory
     yo cc-angular:service my-service
     yo cc-angular:filter my-filter
     yo cc-angular:module my-module
 
-The name paramater passed (i.e. 'my-awesome-directive') will be used as the file names.  The generators will derive appropriate class names from this parameter (ex. 'my-awesome-directive' will convert to a class name of 'MyAwesomeDirective').  Each sub-generator will ask for the folder in which to create the new skeleton files.  You may override the default folder for each sub-generator in the `.yo-rc.json` file.
+The name parameter passed (i.e. 'my-awesome-directive') will be used as the file names.  The generators will derive appropriate class names from this parameter (ex. 'my-awesome-directive' will convert to a class name of 'MyAwesomeDirective').  Each sub-generator will ask for the folder in which to create the new skeleton files.  You may override the default folder for each sub-generator in the `.yo-rc.json` file.
 
-Subgenerators are also customizable.  Please read [CUSTOMIZING.md](CUSTOMIZING.md) for details.
+Sub-generators are also customizable.  Please read [CUSTOMIZING.md](CUSTOMIZING.md) for details.
 
 Submodules
 -------------
@@ -122,7 +123,7 @@ Also submodules have the appCore.module as dependency, because this module manag
 Preconfigured Libraries
 -------------
 
-The new app will have a handful of preconfigured libraries included.  This includes Angular 1.3, Bootstrap 3,
+The new app will have a handful of preconfigured libraries included.  This includes Angular 1.4, Bootstrap 4,
 AngularUI Utils, FontAwesome 4, JQuery 2, Underscore 1.7, LESS 1.6, and Moment 2.5.  You may of course add to or
 remove any of these libraries.
 But the work to integrate them into the app and into the build process has already been done for you.
@@ -132,7 +133,7 @@ Build Process
 
 The project will include a ready-made Grunt build that will:
 
-* Build all the LESS files into one minified CSS file.
+* Build all the SASS files into one minified CSS file.
 * Uses [grunt-angular-templates](https://github.com/ericclemmons/grunt-angular-templates) to turn all your partials into Javascript.
 * Uses [grunt-ng-annotate](https://github.com/olov/ng-annotate) to preprocess all Angular injectable methods and make them minification safe.  Thus you don't have to use the array syntax.
 * Concatenates and minifies all Javascript into one file.
@@ -162,12 +163,6 @@ The step defninitions should be in a sub folder step_definitions of the partial 
 module contains all files needed to be placed in another app created with cc-angular.
 
 Naming convention for step files: **PARTIALNAME.steps.js**
-
-Thanks
--------
-Thanks to [leanovate.de](http://www.leanovate.de) I'm able to spend 10 - 15% of my time to work on open source
- projects. Leanovate rocks!
-
 
 
 Release History

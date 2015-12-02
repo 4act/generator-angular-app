@@ -1,0 +1,21 @@
+/*********************** bootstrap *********************************/
+/****************** or the whole package****************************/
+// Custom bootstrap config variables
+@import "custom_variables.scss";
+
+// Bootstrap core file
+@import "../bower_components/bootstrap/scss/bootstrap.scss";
+
+/*********************** bootstrap end *********************************/
+
+@import "../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../bower_components/toastr/toastr.scss";
+
+/* Component SASS */
+/* Add Component SASS Above */
+
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
