@@ -29,7 +29,12 @@ DirectiveGenerator.prototype.askFor = function askFor() {
             name: 'needpartial',
             message: 'Does this directive need an external html file (i.e. partial)?',
             default: true
+        },
+        {
+            name: 'controllerAs',
+            message: 'What should be the variable name for the controller (controllerAs)'
         }
+
     ];
 
     ccUtils.addNamePrompt(this, prompts, 'directive');
@@ -39,6 +44,7 @@ DirectiveGenerator.prototype.askFor = function askFor() {
             this.name = props.name;
         }
         this.needpartial = props.needpartial;
+        this.controllerAs = _.camelize(props.controllerAs);
         ccUtils.askForModuleAndDir('directive', this, this.needpartial, cb);
     }.bind(this));
 
@@ -52,6 +58,8 @@ DirectiveGenerator.prototype.files = function files() {
         configName = 'directiveComplexTemplates';
         defaultDir = 'templates/complex';
     }
+
+    this.ctrlname = _.camelize(_.classify(this.name)) + 'Ctrl';
 
     this.htmlPath = path.join(this.dir, this.name + '.directive.html').replace(/\\/g, '/');
     this.htmlPath = this.htmlPath.replace('src/', '');

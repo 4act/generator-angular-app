@@ -5,13 +5,30 @@
         return {
             restrict: 'EA',
             replace: true,
-            scope: {},
+            scope: true,
+            bindToController: {
+
+            },
             templateUrl: '<%= htmlPath %>',
-            link: link<%= _.camelize(name) %>
+            controller: <%= ctrlname %>,
+            controllerAs: '<%= controllerAs %>'
         };
     });
 
-    function link<%= _.camelize(name) %>(scope, elem, attrs, fn) {
+    function <%= ctrlname %>() {
+        var <%= controllerAs %> = this;
 
+        /* put bindable members here like
+         <%= controllerAs %>.buttonClick = buttonClick;
+         */
+
+        init();
+
+
+        function init() {
+            //do stuff to init controller
+        }
+
+        return <%= controllerAs %>;
     }
 })(angular);
