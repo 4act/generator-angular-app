@@ -1,4 +1,4 @@
-#generator-cc-angular
+#generator-angular-app
 
 >Create enterprise AngularJS projects with a focus on BDD, testing, the latest standards, tooling, and libraries.
 
@@ -8,7 +8,7 @@ It did not perfectly fit to my needs so I improved it for my purposes:
 
 * **clearer separation of config and sources** by putting all the application-code in the `src` folder
 * **integration of `protractor`**, executing matching e2e tests just like the unit tests
-* **Angular 1.3.x**: updated all the bower-components and npm libs, dropped angular-bootstrap for that (supports only
+* **Angular 1.4.x**: updated all the bower-components and npm libs, dropped angular-bootstrap for that (supports only
  1.2.x at the moment)
 * using `ui.router` by default
 * **Styleguide compliance**: try to stick to the very good [AngularJS Style Guide](https://github
@@ -20,8 +20,6 @@ It did not perfectly fit to my needs so I improved it for my purposes:
 * Exception Handling and logging
 * Coverage report for unit tests
 
-In the end, there where so many changes, that I decided to rename the generator to "cc-angular" where "cc" stands for
- "clean code".
 
 This project is one of many things that you can use to get started
 on a new app. For a comparison of the options and the trade-offs between
@@ -31,14 +29,14 @@ them, please visit [this](http://www.dancancro.com/comparison-of-angularjs-appli
 Features
 
 * Provides a directory structure geared towards large Angular projects.
-    * Each controller, service, filter, and directive are placed in their own file.
+    * Each controller, service, factory, filter, and directive are placed in their own file.
     * All files related to a conceptual unit are placed together. For example, the controller, HTML, LESS, and
     e2e/unit test for a partial are placed together in the same directory.
 * Provides a ready-made Grunt build that produces an extremely optimized distribution.
    * Build uses [grunt-ng-annotate](https://github.com/olov/ng-annotate)
    * `grunt serve` task allows you to run a simple development server with watch/livereload enabled.  Additionally, JSHint and the appropriate unit tests are run for the changed files.
 * Integrates Bower for package management
-* Includes Yeoman subgenerators for directives, services, partials, filters, and modules.
+* Includes Yeoman subgenerators for directives, services, factories, partials, filters, and modules.
 * Integrates SASS and includes Bootstrap v4 via the source SASS files allowing you to reuse Bootstrap vars/mixins/etc.
 * Easily Testable - Each sub-generator creates a skeleton unit test.  Unit tests can be run via `grunt test` and they run automatically during the grunt watch that is active during `grunt serve`.
     * partials with routes generate an e2e skeleton test
