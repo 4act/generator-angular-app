@@ -59,7 +59,7 @@ Prerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:
 Next, install this generator:
 
     # for global use, otherwise install in project
-    npm install -g generator-cc-angular
+    npm install -g generator-angular-app
 
 To create a project:
 
@@ -67,10 +67,10 @@ To create a project:
     cd MyNewAwesomeApp
 
     #if not installed globally, install it in the project
-    npm install generator-cc-angular
+    npm install generator-angular-app
 
     # let's generate the app
-    yo cc-angular
+    yo angular-app
 
     #we need webdriver for protractor
     ./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update
@@ -101,12 +101,12 @@ There are generators for `directive`, `partial`, `factory`, `service`, `filter`,
 
 Running a generator:
 
-    yo cc-angular:directive my-awesome-directive
-    yo cc-angular:partial my-partial
-    yo cc-angular:factory my-factory
-    yo cc-angular:service my-service
-    yo cc-angular:filter my-filter
-    yo cc-angular:module my-module
+    yo angular-app:directive my-awesome-directive
+    yo angular-app:partial my-partial
+    yo angular-app:factory my-factory
+    yo angular-app:service my-service
+    yo angular-app:filter my-filter
+    yo angular-app:module my-module
 
 The name parameter passed (i.e. 'my-awesome-directive') will be used as the file names.  The generators will derive appropriate class names from this parameter (ex. 'my-awesome-directive' will convert to a class name of 'MyAwesomeDirective').  Each sub-generator will ask for the folder in which to create the new skeleton files.  You may override the default folder for each sub-generator in the `.yo-rc.json` file.
 
@@ -115,7 +115,7 @@ Sub-generators are also customizable.  Please read [CUSTOMIZING.md](CUSTOMIZING.
 Submodules
 -------------
 
-Submodules allow you to more explicitly separate parts of your application.  Use the `yo cc-angular:module my-module` command and specify a new subdirectory to place the module into.  Once you've created a submodule, running other subgenerators will now prompt you to select the module in which to place the new component.
+Submodules allow you to more explicitly separate parts of your application.  Use the `yo angular-app:module my-module` command and specify a new subdirectory to place the module into.  Once you've created a submodule, running other subgenerators will now prompt you to select the module in which to place the new component.
 Also submodules have the appCore.module as dependency, because this module manages all 3thrd party dependencies
 
 Preconfigured Libraries
@@ -156,9 +156,9 @@ E2E Testing
 The generator comes with E2E tests in Gherkin, compiled to JS with cucumber.js. This makes it easy to elaborate these
  tests as part of the "feature contract" together with a non tech person (product owner, customer...).
 
-cc-angular generates .feature files for partial with a route and puts it in the same directory as the partial file.
+angular-app generates .feature files for partial with a route and puts it in the same directory as the partial file.
 The step defninitions should be in a sub folder step_definitions of the partial folder, because this way, the whole
-module contains all files needed to be placed in another app created with cc-angular.
+module contains all files needed to be placed in another app created with angular-app.
 
 Naming convention for step files: **PARTIALNAME.steps.js**
 
